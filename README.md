@@ -83,7 +83,7 @@ python3 scripts/watchlist_report.py --session midday
 python3 scripts/watchlist_report.py --session close
 ```
 
-输出：`reports/<日期>/watchlist-<session>.md`、同名 `.json`（含名单 sha256 与每只标的的 `input_sha256`）、行情快照 `reports/<日期>/data/`，并自动重建 [`reports/README.md`](reports/README.md) 索引。
+输出：`reports/<日期>/watchlist-<session>.md`、同名 `.html`（单文件内联样式，可直接看或挂 Pages）与 `.json`（含名单 sha256 与每只标的的 `input_sha256`）、行情快照 `reports/<日期>/data/`，并自动重建 [`reports/README.md`](reports/README.md) 索引。
 
 发布到两个仓库：
 
