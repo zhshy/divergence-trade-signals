@@ -59,17 +59,17 @@ def blob_sha(data):
     return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
 
 
-def tracked_blobs():
+def tracked_blobs(root):
     """读 Git 索引里的字节（LF），避免 Windows 工作区 CRLF 造成全库行尾抖动。"""
     output = subprocess.run(
-        ["git", "-C", str(REPO_DIR), "ls-files", "-z"],
+        ["git", "-C", str(root), "ls-files", "-z"],
         check=True, capture_output=True,
     ).stdout
     paths = sorted(p for p in output.decode("utf-8").split("\0") if p)
     blobs = {}
     for path in paths:
         blobs[path] = subprocess.run(
-            ["git", "-C", str(REPO_DIR), "show", f":{path}"],
+            ["git", "-C", str(root), "show", f":{path}"],
             check=True, capture_output=True,
         ).stdout
     return blobs
@@ -80,17 +80,19 @@ def main():
     parser.add_argument("message")
     parser.add_argument("--branch", default="main")
     parser.add_argument("--tag", default="-")
+    parser.add_argument("--repo", default=REPO, help="owner/name，默认本仓库")
+    parser.add_argument("--repo-dir", default=str(REPO_DIR), help="本地 Git 工作副本")
     args = parser.parse_args()
     auth = token()
 
-    head = call(auth, "GET", f"/repos/{REPO}/git/ref/heads/{args.branch}")["object"]["sha"]
-    base_tree = call(auth, "GET", f"/repos/{REPO}/git/commits/{head}")["tree"]["sha"]
+    head = call(auth, "GET", f"/repos/{args.repo}/git/ref/heads/{args.branch}")["object"]["sha"]
+    base_tree = call(auth, "GET", f"/repos/{args.repo}/git/commits/{head}")["tree"]["sha"]
     remote = {}
-    for entry in call(auth, "GET", f"/repos/{REPO}/git/trees/{base_tree}?recursive=1")["tree"]:
+    for entry in call(auth, "GET", f"/repos/{args.repo}/git/trees/{base_tree}?recursive=1")["tree"]:
         if entry["type"] == "blob":
             remote[entry["path"]] = entry["sha"]
 
-    raw = tracked_blobs()
+    raw = tracked_blobs(args.repo_dir)
     local = {path: blob_sha(data) for path, data in raw.items()}
 
     added = sorted(p for p in local if p not in remote)
@@ -109,7 +111,7 @@ def main():
 
     tree = []
     for path in added + modified:
-        blob = call(auth, "POST", f"/repos/{REPO}/git/blobs",
+        blob = call(auth, "POST", f"/repos/{args.repo}/git/blobs",
                     {"content": base64.b64encode(raw[path]).decode(), "encoding": "base64"})
         if blob["sha"] != local[path]:
             sys.exit(f"blob sha 不一致: {path}")
@@ -117,23 +119,23 @@ def main():
     for path in deleted:
         tree.append({"path": path, "mode": "100644", "type": "blob", "sha": None})
 
-    new_tree = call(auth, "POST", f"/repos/{REPO}/git/trees",
+    new_tree = call(auth, "POST", f"/repos/{args.repo}/git/trees",
                     {"base_tree": base_tree, "tree": tree})["sha"]
-    commit = call(auth, "POST", f"/repos/{REPO}/git/commits",
+    commit = call(auth, "POST", f"/repos/{args.repo}/git/commits",
                   {"message": args.message, "tree": new_tree, "parents": [head]})
-    call(auth, "PATCH", f"/repos/{REPO}/git/refs/heads/{args.branch}", {"sha": commit["sha"]})
+    call(auth, "PATCH", f"/repos/{args.repo}/git/refs/heads/{args.branch}", {"sha": commit["sha"]})
     print(f"已推送 {commit['sha'][:12]} -> {args.branch}")
 
     if args.tag not in ("-", "none", ""):
         try:
-            call(auth, "POST", f"/repos/{REPO}/git/refs",
+            call(auth, "POST", f"/repos/{args.repo}/git/refs",
                  {"ref": f"refs/tags/{args.tag}", "sha": commit["sha"]})
             print(f"已打标签 {args.tag}")
         except SystemExit as error:
             print(f"打标签失败（可能已存在）: {error}")
 
     remote = {}
-    for entry in call(auth, "GET", f"/repos/{REPO}/git/trees/{commit['sha']}?recursive=1")["tree"]:
+    for entry in call(auth, "GET", f"/repos/{args.repo}/git/trees/{commit['sha']}?recursive=1")["tree"]:
         if entry["type"] == "blob":
             remote[entry["path"]] = entry["sha"]
     diff = [p for p in local if remote.get(p) != local[p]]
