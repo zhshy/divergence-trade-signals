@@ -85,6 +85,15 @@ python3 scripts/watchlist_report.py --session close
 
 输出：`reports/<日期>/watchlist-<session>.md`、同名 `.json`（含名单 sha256 与每只标的的 `input_sha256`）、行情快照 `reports/<日期>/data/`，并自动重建 [`reports/README.md`](reports/README.md) 索引。
 
+发布到两个仓库：
+
+```bash
+python3 scripts/publish_reports.py "reports: <日期> <期次>"   # 本仓库
+python3 scripts/mirror_to_deep.py --session midday            # 镜像到深度研报仓库
+```
+
+`mirror_to_deep.py` 会把报告复制成 `reports/<日期>/自选股信号-<午间|收盘>.md`（带 `<!-- summary: -->` 供索引取一句话结论），重建对方 README 与 `index.html` 落地页后经 Git Data API 推送。
+
 - 非交易日或数据未更新时返回退出码 `3`，且不写文件——定时任务据此跳过推送；
 - 默认 `--no-strategic-authorization`，所有触发都会降级为观察；确实要出战术授权时显式加 `--strategic-authorized`；
 - 概念指数等无公开日线源的标的放在名单里标 `"role": "context"`，只列名不产生信号。

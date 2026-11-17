@@ -75,8 +75,9 @@ def mirror(source_md, source_json, target_dir, slot, payload):
     )
     md_target = target_dir / f"自选股信号-{slot}.md"
     json_target = target_dir / f"自选股信号-{slot}.json"
-    md_target.write_text(text, encoding="utf-8")
-    json_target.write_bytes(source_json.read_bytes())
+    # 深度研报仓库统一 LF，Windows 下必须显式指定，否则会写成 CRLF
+    md_target.write_text(text, encoding="utf-8", newline="\n")
+    json_target.write_bytes(source_json.read_bytes().replace(b"\r\n", b"\n"))
     return md_target, json_target
 
 
