@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-17T10:46:36+08:00",
+  "generated_at": "2026-11-17T11:35:48+08:00",
   "session": "midday",
   "as_of": "2026-11-17",
   "engine_version": "0.2.0",
@@ -31,7 +31,7 @@
       "market": "cn_a_stock",
       "note": "PCB",
       "as_of": "2026-11-17",
-      "last_close": 43.43,
+      "last_close": 44.32,
       "action": "WAIT",
       "setup_type": null,
       "setup_direction": null,
@@ -41,14 +41,14 @@
       "initial_stop": null,
       "targets": [],
       "targets_basis": null,
-      "rsi14": 25.86127949,
-      "volume_ratio": 1.02,
+      "rsi14": 27.08057864,
+      "volume_ratio": 1.04,
       "returns_pct": {
-        "5d": -12.39,
-        "20d": -41.19,
-        "60d": -55.91
+        "5d": -10.59,
+        "20d": -39.99,
+        "60d": -55.01
       },
-      "support": 42.21,
+      "support": 43.96,
       "resistance": 49.17,
       "execution_blockers": [],
       "strategic_authorization": "NOT_AUTHORIZED",
@@ -60,7 +60,7 @@
         "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only.",
         "The latest bar is not final; new entries are blocked until the bar closes."
       ],
-      "input_sha256": "0ec1831256de4acbc74768ab6b6bdd327c37b65b20f3f644cc560c88f344c208",
+      "input_sha256": "623365c87d20f352754a43c899551ab596252f17d8b55e46442cfda42564d2a6",
       "strategy_version": "0.2.0"
     },
     {
@@ -69,7 +69,7 @@
       "market": "cn_a_stock",
       "note": "光通信/海缆",
       "as_of": "2026-11-17",
-      "last_close": 37.95,
+      "last_close": 39.02,
       "action": "WATCH_LONG",
       "setup_type": "regular_bullish",
       "setup_direction": "long",
@@ -82,14 +82,14 @@
         48.38333333
       ],
       "targets_basis": "current_timeframe_fallback",
-      "rsi14": 33.7393264,
-      "volume_ratio": 0.94,
+      "rsi14": 35.6343582,
+      "volume_ratio": 0.95,
       "returns_pct": {
-        "5d": -11.14,
-        "20d": -27.12,
-        "60d": -41.67
+        "5d": -8.64,
+        "20d": -25.06,
+        "60d": -40.02
       },
-      "support": 34.17,
+      "support": 38.81,
       "resistance": 43.55,
       "execution_blockers": [],
       "strategic_authorization": "NOT_AUTHORIZED",
@@ -102,7 +102,7 @@
         "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only.",
         "The latest bar is not final; new entries are blocked until the bar closes."
       ],
-      "input_sha256": "cddb01a88c2f6a283eb474312c06cdbff8fcaa31fd31190a6695bf06f113a8a4",
+      "input_sha256": "e72937ba6d188a82ef56f58bdde8bde4dc3545f31bd7b14d0c2d20d7ab6968f2",
       "strategy_version": "0.2.0"
     },
     {
@@ -111,7 +111,7 @@
       "market": "cn_a_stock",
       "note": "锗/小金属",
       "as_of": "2026-11-17",
-      "last_close": 68.28,
+      "last_close": 69.79,
       "action": "WAIT_DO_NOT_CHASE",
       "setup_type": "hidden_bearish",
       "setup_direction": "short",
@@ -124,12 +124,12 @@
         69.61333333
       ],
       "targets_basis": "current_timeframe_fallback",
-      "rsi14": 40.58862682,
-      "volume_ratio": 0.96,
+      "rsi14": 42.42284466,
+      "volume_ratio": 0.97,
       "returns_pct": {
-        "5d": -6.29,
-        "20d": -13.48,
-        "60d": -37.73
+        "5d": -4.21,
+        "20d": -11.57,
+        "60d": -36.35
       },
       "support": 68.12,
       "resistance": 80.84,
@@ -143,7 +143,7 @@
         "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only.",
         "The latest bar is not final; new entries are blocked until the bar closes."
       ],
-      "input_sha256": "556102b43d7245d972a9769d913839da217fa71338f31f82ddb22421e9983dea",
+      "input_sha256": "c8838fc813da0cf55415605fa6c7237f471719669d2ce260c923bd0ad892c17e",
       "strategy_version": "0.2.0"
     },
     {
@@ -152,7 +152,7 @@
       "market": "cn_a_stock",
       "note": "铜钴",
       "as_of": "2026-11-17",
-      "last_close": 12.36,
+      "last_close": 12.53,
       "action": "WAIT_DO_NOT_CHASE",
       "setup_type": "hidden_bearish",
       "setup_direction": "short",
@@ -165,12 +165,12 @@
         13.45666667
       ],
       "targets_basis": "current_timeframe_fallback",
-      "rsi14": 26.30737759,
-      "volume_ratio": 0.86,
+      "rsi14": 27.72500953,
+      "volume_ratio": 0.88,
       "returns_pct": {
-        "5d": -9.85,
-        "20d": -13.87,
-        "60d": -35.39
+        "5d": -8.61,
+        "20d": -12.68,
+        "60d": -34.5
       },
       "support": 12.24,
       "resistance": 13.73,
@@ -184,7 +184,7 @@
         "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only.",
         "The latest bar is not final; new entries are blocked until the bar closes."
       ],
-      "input_sha256": "cebcfdafb0b0aacb38fc59728a0d2a81873dee07b99dd66fd805c66c0966cc5f",
+      "input_sha256": "36a9b4ebf91c96ea07eb507d3e93897ebe7b1978e77aa93d5cbdd6e6be7c004f",
       "strategy_version": "0.2.0"
     },
     {
@@ -193,7 +193,7 @@
       "market": "cn_a_etf",
       "note": "科创板宽基",
       "as_of": "2026-11-17",
-      "last_close": 1.275,
+      "last_close": 1.325,
       "action": "WAIT",
       "setup_type": null,
       "setup_direction": null,
@@ -203,14 +203,14 @@
       "initial_stop": null,
       "targets": [],
       "targets_basis": null,
-      "rsi14": 37.39505979,
-      "volume_ratio": 0.8,
+      "rsi14": 43.18838313,
+      "volume_ratio": 0.83,
       "returns_pct": {
-        "5d": -4.64,
-        "20d": -10.02,
-        "60d": -32.47
+        "5d": -0.9,
+        "20d": -6.49,
+        "60d": -29.82
       },
-      "support": 1.26,
+      "support": 1.321,
       "resistance": 1.405,
       "execution_blockers": [],
       "strategic_authorization": "NOT_AUTHORIZED",
@@ -222,7 +222,7 @@
         "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only.",
         "The latest bar is not final; new entries are blocked until the bar closes."
       ],
-      "input_sha256": "cb8c2080248142f60dcac606042e13e5660d38df4b7bab2a3d84d11df1f762ad",
+      "input_sha256": "8536b8c21fea547d92ff216cf992552cd3c93b3a4e379f298637d085dfa7c694",
       "strategy_version": "0.2.0"
     },
     {
@@ -231,7 +231,7 @@
       "market": "cn_a_etf",
       "note": "AI 主题",
       "as_of": "2026-11-17",
-      "last_close": 0.738,
+      "last_close": 0.752,
       "action": "WAIT",
       "setup_type": null,
       "setup_direction": null,
@@ -241,12 +241,12 @@
       "initial_stop": null,
       "targets": [],
       "targets_basis": null,
-      "rsi14": 32.75420982,
-      "volume_ratio": 1.35,
+      "rsi14": 33.8840589,
+      "volume_ratio": 1.36,
       "returns_pct": {
-        "5d": -10.11,
-        "20d": -23.04,
-        "60d": -41.48
+        "5d": -8.4,
+        "20d": -21.58,
+        "60d": -40.36
       },
       "support": null,
       "resistance": 0.844,
@@ -260,7 +260,7 @@
         "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only.",
         "The latest bar is not final; new entries are blocked until the bar closes."
       ],
-      "input_sha256": "3de147cf9cf134fd848150e25a4c890619ccc92f1fd651ba7ac82ff022df17ec",
+      "input_sha256": "4a2596d1d6fe396e93fe675c8be627589b2597823babe4e01f76a99216714fcc",
       "strategy_version": "0.2.0"
     },
     {
@@ -269,7 +269,7 @@
       "market": "cn_a_stock",
       "note": "券商",
       "as_of": "2026-11-17",
-      "last_close": 25.08,
+      "last_close": 25.04,
       "action": "WAIT",
       "setup_type": null,
       "setup_direction": null,
@@ -279,12 +279,12 @@
       "initial_stop": null,
       "targets": [],
       "targets_basis": null,
-      "rsi14": 42.56955166,
-      "volume_ratio": 0.57,
+      "rsi14": 42.08836827,
+      "volume_ratio": 0.58,
       "returns_pct": {
-        "5d": -1.76,
-        "20d": -2.03,
-        "60d": -8.93
+        "5d": -1.92,
+        "20d": -2.19,
+        "60d": -9.08
       },
       "support": 24.95,
       "resistance": 25.33,
@@ -298,7 +298,7 @@
         "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only.",
         "The latest bar is not final; new entries are blocked until the bar closes."
       ],
-      "input_sha256": "4fc99b8c3733a5e8e2827f29ffb9eae0a6863a03324c3b758853d4564d3d8dfe",
+      "input_sha256": "fb01a27a694c63a48da586115261d6c4c240a8f4f65eac7365dd767f22e6d4a0",
       "strategy_version": "0.2.0"
     },
     {
@@ -307,7 +307,7 @@
       "market": "cn_a_stock",
       "note": "PCB",
       "as_of": "2026-11-17",
-      "last_close": 13.73,
+      "last_close": 14.05,
       "action": "WAIT",
       "setup_type": null,
       "setup_direction": null,
@@ -317,15 +317,15 @@
       "initial_stop": null,
       "targets": [],
       "targets_basis": null,
-      "rsi14": 34.19638191,
-      "volume_ratio": 0.98,
+      "rsi14": 35.91903987,
+      "volume_ratio": 1.0,
       "returns_pct": {
-        "5d": -9.73,
-        "20d": -37.59,
-        "60d": 1.4
+        "5d": -7.63,
+        "20d": -36.14,
+        "60d": 3.77
       },
-      "support": 13.66,
-      "resistance": 13.79,
+      "support": 13.92,
+      "resistance": 14.2,
       "execution_blockers": [],
       "strategic_authorization": "NOT_AUTHORIZED",
       "warnings": [
@@ -336,7 +336,7 @@
         "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only.",
         "The latest bar is not final; new entries are blocked until the bar closes."
       ],
-      "input_sha256": "945b2cb1b885b972fcf7047007f47d6b3a25f427fe7b8508ff386ef2948fdabf",
+      "input_sha256": "7d4f5755257d3b6bdfa1ce1a85644f2562991ab3bf57ff6081585e9330bd5df8",
       "strategy_version": "0.2.0"
     },
     {
@@ -345,7 +345,7 @@
       "market": "cn_a_stock",
       "note": "PCB/覆铜板",
       "as_of": "2026-11-17",
-      "last_close": 16.94,
+      "last_close": 17.35,
       "action": "WAIT",
       "setup_type": null,
       "setup_direction": null,
@@ -355,12 +355,12 @@
       "initial_stop": null,
       "targets": [],
       "targets_basis": null,
-      "rsi14": 41.34582424,
-      "volume_ratio": 0.97,
+      "rsi14": 42.83332477,
+      "volume_ratio": 0.99,
       "returns_pct": {
-        "5d": -8.13,
-        "20d": -33.85,
-        "60d": 7.76
+        "5d": -5.91,
+        "20d": -32.25,
+        "60d": 10.37
       },
       "support": 15.85,
       "resistance": 17.76,
@@ -374,7 +374,7 @@
         "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only.",
         "The latest bar is not final; new entries are blocked until the bar closes."
       ],
-      "input_sha256": "843f571519967db32613980b6e87ade99f9ff6404461e361f56cf5f4823719f4",
+      "input_sha256": "fa6860688badc131279fbbf2a3eba02dd40257ff4ed64d92be15379768eef09b",
       "strategy_version": "0.2.0"
     },
     {
@@ -383,7 +383,7 @@
       "market": "cn_a_stock",
       "note": "钨",
       "as_of": "2026-11-17",
-      "last_close": 35.15,
+      "last_close": 36.58,
       "action": "WAIT",
       "setup_type": null,
       "setup_direction": null,
@@ -393,14 +393,14 @@
       "initial_stop": null,
       "targets": [],
       "targets_basis": null,
-      "rsi14": 33.01860363,
-      "volume_ratio": 1.03,
+      "rsi14": 36.63173524,
+      "volume_ratio": 1.05,
       "returns_pct": {
-        "5d": -14.06,
-        "20d": -19.77,
-        "60d": -50.13
+        "5d": -10.56,
+        "20d": -16.5,
+        "60d": -48.11
       },
-      "support": 27.57,
+      "support": 35.3,
       "resistance": 43.16,
       "execution_blockers": [],
       "strategic_authorization": "NOT_AUTHORIZED",
@@ -412,7 +412,7 @@
         "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only.",
         "The latest bar is not final; new entries are blocked until the bar closes."
       ],
-      "input_sha256": "81f4930e1d3e36ae005d111bcdfb6318f320414b729b4eba11334b93e77b5621",
+      "input_sha256": "42c93e7a5a41ba7b1bb37afdcee4c67f729f1e3efbb6cc6437462924f9da4d1a",
       "strategy_version": "0.2.0"
     },
     {
@@ -421,7 +421,7 @@
       "market": "cn_a_stock",
       "note": "工业气体",
       "as_of": "2026-11-17",
-      "last_close": 34.15,
+      "last_close": 34.6,
       "action": "WAIT",
       "setup_type": null,
       "setup_direction": null,
@@ -431,15 +431,15 @@
       "initial_stop": null,
       "targets": [],
       "targets_basis": null,
-      "rsi14": 46.69325295,
-      "volume_ratio": 0.95,
+      "rsi14": 48.2521917,
+      "volume_ratio": 0.97,
       "returns_pct": {
-        "5d": -1.7,
-        "20d": -2.48,
-        "60d": -27.0
+        "5d": -0.4,
+        "20d": -1.2,
+        "60d": -26.04
       },
       "support": 34.03,
-      "resistance": 34.2,
+      "resistance": 34.68,
       "execution_blockers": [],
       "strategic_authorization": "NOT_AUTHORIZED",
       "warnings": [
@@ -450,7 +450,7 @@
         "Short entries are disabled for this market profile; bearish divergence is exit/reduce information only.",
         "The latest bar is not final; new entries are blocked until the bar closes."
       ],
-      "input_sha256": "916c90bb88c3ddf6b0f18fb2929420cc11b8edf19ffb90358cbb1b79cca884bb",
+      "input_sha256": "7eff9185be0834c0992065ad3a7ed454195412e94e42cc3cac4352d8e7eea724",
       "strategy_version": "0.2.0"
     }
   ],
