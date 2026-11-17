@@ -71,6 +71,25 @@ python3 scripts/divergence_signals.py /path/to/sz300750.csv \
 
 CSV 只需要 `open,high,low,close,volume` 五列，`timestamp` 可选，至少 60 行。格式见 [`assets/example_asset.txt`](assets/example_asset.txt)。
 
+## 自选股日报（午间 / 收盘）
+
+`config/watchlist.json` 维护自选名单（代码、名称、市场 profile、角色），技术状态全部由引擎现算。每份报告包含：逐只动作、形态与状态、触发价/止损/目标、RSI 与量能确认、执行闸门拦截项。
+
+```bash
+# 午间盘后（11:30 之后）：当日 K 线未收盘，bar_status=forming，只作预演
+python3 scripts/watchlist_report.py --session midday
+
+# 收盘后（15:00 之后）：bar_status=closed
+python3 scripts/watchlist_report.py --session close
+```
+
+输出：`reports/<日期>/watchlist-<session>.md`、同名 `.json`（含名单 sha256 与每只标的的 `input_sha256`）、行情快照 `reports/<日期>/data/`，并自动重建 [`reports/README.md`](reports/README.md) 索引。
+
+- 非交易日或数据未更新时返回退出码 `3`，且不写文件——定时任务据此跳过推送；
+- 默认 `--no-strategic-authorization`，所有触发都会降级为观察；确实要出战术授权时显式加 `--strategic-authorized`；
+- 概念指数等无公开日线源的标的放在名单里标 `"role": "context"`，只列名不产生信号。
+
+
 ## 市场 Profile
 
 ```bash

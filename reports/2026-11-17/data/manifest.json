@@ -1,0 +1,100 @@
+{
+  "source": "Tencent public ifzq daily K-line endpoint (unadjusted)",
+  "endpoint": "https://web.ifzq.gtimg.cn/appstock/app/kline/kline",
+  "fetched_at": "2026-11-17T02:46:29.501256+00:00",
+  "requested_start": "2024-05-31",
+  "requested_end": "2026-11-17",
+  "as_of": "2026-11-17",
+  "adjustment": "none",
+  "caveat": "Unadjusted prices may contain ex-dividend or split gaps.",
+  "symbols": {
+    "sz002938": {
+      "file": "sz002938.csv",
+      "rows": 401,
+      "first": "2025-03-25",
+      "last": "2026-11-17",
+      "last_close": 43.43,
+      "sha256": "0ec1831256de4acbc74768ab6b6bdd327c37b65b20f3f644cc560c88f344c208"
+    },
+    "sh600487": {
+      "file": "sh600487.csv",
+      "rows": 401,
+      "first": "2025-03-25",
+      "last": "2026-11-17",
+      "last_close": 37.95,
+      "sha256": "cddb01a88c2f6a283eb474312c06cdbff8fcaa31fd31190a6695bf06f113a8a4"
+    },
+    "sz002428": {
+      "file": "sz002428.csv",
+      "rows": 401,
+      "first": "2025-03-25",
+      "last": "2026-11-17",
+      "last_close": 68.28,
+      "sha256": "556102b43d7245d972a9769d913839da217fa71338f31f82ddb22421e9983dea"
+    },
+    "sh603993": {
+      "file": "sh603993.csv",
+      "rows": 401,
+      "first": "2025-03-25",
+      "last": "2026-11-17",
+      "last_close": 12.36,
+      "sha256": "cebcfdafb0b0aacb38fc59728a0d2a81873dee07b99dd66fd805c66c0966cc5f"
+    },
+    "sh588000": {
+      "file": "sh588000.csv",
+      "rows": 401,
+      "first": "2025-03-25",
+      "last": "2026-11-17",
+      "last_close": 1.275,
+      "sha256": "cb8c2080248142f60dcac606042e13e5660d38df4b7bab2a3d84d11df1f762ad"
+    },
+    "sz159246": {
+      "file": "sz159246.csv",
+      "rows": 329,
+      "first": "2025-07-10",
+      "last": "2026-11-17",
+      "last_close": 0.738,
+      "sha256": "3de147cf9cf134fd848150e25a4c890619ccc92f1fd651ba7ac82ff022df17ec"
+    },
+    "sh600030": {
+      "file": "sh600030.csv",
+      "rows": 401,
+      "first": "2025-03-25",
+      "last": "2026-11-17",
+      "last_close": 25.08,
+      "sha256": "4fc99b8c3733a5e8e2827f29ffb9eae0a6863a03324c3b758853d4564d3d8dfe"
+    },
+    "sz002815": {
+      "file": "sz002815.csv",
+      "rows": 401,
+      "first": "2025-03-25",
+      "last": "2026-11-17",
+      "last_close": 13.73,
+      "sha256": "945b2cb1b885b972fcf7047007f47d6b3a25f427fe7b8508ff386ef2948fdabf"
+    },
+    "sz000823": {
+      "file": "sz000823.csv",
+      "rows": 401,
+      "first": "2025-03-25",
+      "last": "2026-11-17",
+      "last_close": 16.94,
+      "sha256": "843f571519967db32613980b6e87ade99f9ff6404461e361f56cf5f4823719f4"
+    },
+    "sz000657": {
+      "file": "sz000657.csv",
+      "rows": 401,
+      "first": "2025-03-25",
+      "last": "2026-11-17",
+      "last_close": 35.15,
+      "sha256": "81f4930e1d3e36ae005d111bcdfb6318f320414b729b4eba11334b93e77b5621"
+    },
+    "sz002971": {
+      "file": "sz002971.csv",
+      "rows": 401,
+      "first": "2025-03-25",
+      "last": "2026-11-17",
+      "last_close": 34.15,
+      "sha256": "916c90bb88c3ddf6b0f18fb2929420cc11b8edf19ffb90358cbb1b79cca884bb"
+    }
+  }
+}

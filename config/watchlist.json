@@ -1,0 +1,91 @@
+{
+  "note": "同花顺自选股名单。此文件只维护标的与口径，技术状态一律由 scripts/divergence_signals.py 计算，避免双份维护。",
+  "source": "同花顺自选股截图 2026-11-17 10:40",
+  "updated_at": "2026-11-17",
+  "items": [
+    {
+      "code": "sz002938",
+      "name": "鹏鼎控股",
+      "market": "cn_a_stock",
+      "role": "signal",
+      "note": "PCB"
+    },
+    {
+      "code": "sh600487",
+      "name": "亨通光电",
+      "market": "cn_a_stock",
+      "role": "signal",
+      "note": "光通信/海缆"
+    },
+    {
+      "code": "sz002428",
+      "name": "云南锗业",
+      "market": "cn_a_stock",
+      "role": "signal",
+      "note": "锗/小金属"
+    },
+    {
+      "code": "sh603993",
+      "name": "洛阳钼业",
+      "market": "cn_a_stock",
+      "role": "signal",
+      "note": "铜钴"
+    },
+    {
+      "code": "sh588000",
+      "name": "科创50ETF华夏",
+      "market": "cn_a_etf",
+      "role": "signal",
+      "note": "科创板宽基"
+    },
+    {
+      "code": "sz159246",
+      "name": "创业板人工智能ETF富国",
+      "market": "cn_a_etf",
+      "role": "signal",
+      "note": "AI 主题"
+    },
+    {
+      "code": "sh600030",
+      "name": "中信证券",
+      "market": "cn_a_stock",
+      "role": "signal",
+      "note": "券商"
+    },
+    {
+      "code": "sz002815",
+      "name": "崇达技术",
+      "market": "cn_a_stock",
+      "role": "signal",
+      "note": "PCB"
+    },
+    {
+      "code": "sz000823",
+      "name": "超声电子",
+      "market": "cn_a_stock",
+      "role": "signal",
+      "note": "PCB/覆铜板"
+    },
+    {
+      "code": "sz000657",
+      "name": "中钨高新",
+      "market": "cn_a_stock",
+      "role": "signal",
+      "note": "钨"
+    },
+    {
+      "code": "sz002971",
+      "name": "和远气体",
+      "market": "cn_a_stock",
+      "role": "signal",
+      "note": "工业气体"
+    },
+    {
+      "code": "886084",
+      "name": "光纤概念",
+      "market": null,
+      "role": "context",
+      "note": "同花顺概念指数，腾讯日线接口无该代码，仅作板块情绪参考，不产生技术信号"
+    }
+  ]
+}
