@@ -59,12 +59,20 @@ def blob_sha(data):
     return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
 
 
-def tracked_files():
+def tracked_blobs():
+    """读 Git 索引里的字节（LF），避免 Windows 工作区 CRLF 造成全库行尾抖动。"""
     output = subprocess.run(
         ["git", "-C", str(REPO_DIR), "ls-files", "-z"],
         check=True, capture_output=True,
     ).stdout
-    return sorted(p for p in output.decode("utf-8").split("\0") if p)
+    paths = sorted(p for p in output.decode("utf-8").split("\0") if p)
+    blobs = {}
+    for path in paths:
+        blobs[path] = subprocess.run(
+            ["git", "-C", str(REPO_DIR), "show", f":{path}"],
+            check=True, capture_output=True,
+        ).stdout
+    return blobs
 
 
 def main():
@@ -82,11 +90,8 @@ def main():
         if entry["type"] == "blob":
             remote[entry["path"]] = entry["sha"]
 
-    local, raw = {}, {}
-    for relative in tracked_files():
-        data = (REPO_DIR / relative).read_bytes()
-        raw[relative] = data
-        local[relative] = blob_sha(data)
+    raw = tracked_blobs()
+    local = {path: blob_sha(data) for path, data in raw.items()}
 
     added = sorted(p for p in local if p not in remote)
     modified = sorted(p for p in local if p in remote and remote[p] != local[p])
