@@ -51,7 +51,7 @@ def token():
         return ""
 
 
-def mirror(source_md, source_json, target_dir, slot, payload):
+def mirror(source_md, source_json, source_html, target_dir, slot, payload):
     target_dir.mkdir(parents=True, exist_ok=True)
     text = source_md.read_text(encoding="utf-8")
     # 标题去掉日期与时段后缀，日期时段由索引徽标承担
@@ -75,10 +75,13 @@ def mirror(source_md, source_json, target_dir, slot, payload):
     )
     md_target = target_dir / f"自选股信号-{slot}.md"
     json_target = target_dir / f"自选股信号-{slot}.json"
+    html_target = target_dir / f"自选股信号-{slot}.html"
     # 深度研报仓库统一 LF，Windows 下必须显式指定，否则会写成 CRLF
     md_target.write_text(text, encoding="utf-8", newline="\n")
     json_target.write_bytes(source_json.read_bytes().replace(b"\r\n", b"\n"))
-    return md_target, json_target
+    if source_html.exists():
+        html_target.write_bytes(source_html.read_bytes().replace(b"\r\n", b"\n"))
+    return md_target, json_target, html_target
 
 
 def main():
@@ -87,18 +90,23 @@ def main():
     source_dir = Path(args.reports_dir) / as_of
     source_md = source_dir / f"watchlist-{args.session}.md"
     source_json = source_dir / f"watchlist-{args.session}.json"
+    source_html = source_dir / f"watchlist-{args.session}.html"
     if not source_md.exists() or not source_json.exists():
         print(f"缺少源文件：{source_md.name} / {source_json.name}，先跑 watchlist_report.py")
         return 3
 
     payload = json.loads(source_json.read_text(encoding="utf-8"))
     deep_dir = Path(args.deep_dir)
-    md_target, json_target = mirror(
-        source_md, source_json, deep_dir / "reports" / as_of,
+    md_target, json_target, html_target = mirror(
+        source_md, source_json, source_html, deep_dir / "reports" / as_of,
         SLOT_FILE[args.session], payload
     )
     print(f"镜像: {md_target}")
     print(f"镜像: {json_target}")
+    if source_html.exists():
+        print(f"镜像: {html_target}")
+    else:
+        print("提示：源报告没有 HTML 版本，仅镜像 md/json")
 
     index = subprocess.run([sys.executable, "scripts/build_index.py"],
                            cwd=deep_dir, capture_output=True, text=True, encoding="utf-8")

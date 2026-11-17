@@ -18,6 +18,7 @@ import subprocess
 import sys
 
 from fetch_watchlist_ohlcv import fetch_many
+from render_watchlist_html import render as render_html
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -343,11 +344,14 @@ def main():
     date_dir.mkdir(parents=True, exist_ok=True)
     json_path = date_dir / f"watchlist-{args.session}.json"
     md_path = date_dir / f"watchlist-{args.session}.md"
+    html_path = date_dir / f"watchlist-{args.session}.html"
     json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
                          encoding="utf-8")
     md_path.write_text(render_markdown(payload), encoding="utf-8")
+    html_path.write_text(render_html(payload), encoding="utf-8", newline="\n")
     print(f"JSON: {json_path}")
     print(f"MD:   {md_path}")
+    print(f"HTML: {html_path}")
     if not args.skip_index:
         print(f"Index: {rebuild_index(args.reports_dir)} reports")
     return 0
