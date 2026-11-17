@@ -189,9 +189,19 @@ def main():
         return 2
     if args.format == "text":
         metrics = result["metrics"]
+        # 零交易时胜率与期望没有定义，打印 None 会被误读成"算不出来"，统一显示 —
+        unavailable = "—"
+        win_rate = (
+            f"{metrics['win_rate_pct']}%" if metrics["win_rate_pct"] is not None else unavailable
+        )
+        expectancy = (
+            f"{metrics['expectancy_r']}R" if metrics["expectancy_r"] is not None else unavailable
+        )
         print(f"样本: {result['bars']} bars | 交易: {metrics['trades']}")
-        print(f"胜率: {metrics['win_rate_pct']}% | 期望: {metrics['expectancy_r']}R | 总R: {metrics['total_r']}R")
+        print(f"胜率: {win_rate} | 期望: {expectancy} | 总R: {metrics['total_r']}R")
         print(f"最大回撤: {metrics['max_drawdown_r']}R | 止损次数: {metrics['stops']}")
+        if metrics["trades"] == 0:
+            print("说明: 样本内没有完成触发的结构；零交易不等于规则失效，但也不支持任何胜率结论。")
         print("声明: 这是样本内事件测试，不构成未来收益证据。")
     else:
         print(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False))
