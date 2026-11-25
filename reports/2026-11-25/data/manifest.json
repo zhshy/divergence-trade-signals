@@ -1,7 +1,7 @@
 {
   "source": "Tencent public ifzq daily K-line endpoint (unadjusted)",
   "endpoint": "https://web.ifzq.gtimg.cn/appstock/app/kline/kline",
-  "fetched_at": "2026-11-25T03:35:24.693534+00:00",
+  "fetched_at": "2026-11-25T07:10:23.529262+00:00",
   "requested_start": "2024-06-08",
   "requested_end": "2026-11-25",
   "as_of": "2026-11-25",
@@ -13,88 +13,88 @@
       "rows": 401,
       "first": "2025-04-02",
       "last": "2026-11-25",
-      "last_close": 47.37,
-      "sha256": "79c1128ff82b0c003a675c52cce2337ad089f52ff5fd60ab2857d67f7d3020c9"
+      "last_close": 46.2,
+      "sha256": "5c274d3471c5c6c2fd7a0a2ff6ba068f3f3e39659891deb2b763fe55f1d80a95"
     },
     "sh600487": {
       "file": "sh600487.csv",
       "rows": 401,
       "first": "2025-04-02",
       "last": "2026-11-25",
-      "last_close": 35.8,
-      "sha256": "1db356c3eb0280b90cbd8c0c130017bf6e7274f81ad5c807525ed749f83d94e2"
+      "last_close": 34.2,
+      "sha256": "b1f28c490357a914cdc82568cd7e02b943c25623081055d53722e93eef39470c"
     },
     "sz002428": {
       "file": "sz002428.csv",
       "rows": 401,
       "first": "2025-04-02",
       "last": "2026-11-25",
-      "last_close": 64.28,
-      "sha256": "1d3f350e841619ab24c7faa6094018f2cb8d7fa4a777840cda1de277a318bd1f"
+      "last_close": 62.1,
+      "sha256": "d6bec94e432d6245b44895e74593e7a8c48d1eb33d3603940ec2135b478803d8"
     },
     "sh603993": {
       "file": "sh603993.csv",
       "rows": 401,
       "first": "2025-04-02",
       "last": "2026-11-25",
-      "last_close": 11.74,
-      "sha256": "20b943fbe78ced48fb53199a0e928b0f936133d91c43693638c4859d9173e43f"
+      "last_close": 11.6,
+      "sha256": "8a206fcb05a9cffdceb5aeac636c13cec29e8896af5e5a9adeeb758e389b0ad7"
     },
     "sh588000": {
       "file": "sh588000.csv",
       "rows": 401,
       "first": "2025-04-02",
       "last": "2026-11-25",
-      "last_close": 1.289,
-      "sha256": "7cdf1c5bca13d87ade7ff2d5090f85bf4ae350a936434d9cbc95b08178b85bad"
+      "last_close": 1.254,
+      "sha256": "0ce31600fa7ab99d364be9feb59be0e8431a68f60240432f817f45d4529497ce"
     },
     "sz159246": {
       "file": "sz159246.csv",
       "rows": 335,
       "first": "2025-07-10",
       "last": "2026-11-25",
-      "last_close": 0.727,
-      "sha256": "e9d0a4dd44a75d896f5de5851197ebff85874eea8c5a221b73da2c993b3a901b"
+      "last_close": 0.707,
+      "sha256": "776652b4c5ef4e5bd1ff4ebb09e96e711a70ec828d670f33c04d922b132431b6"
     },
     "sh600030": {
       "file": "sh600030.csv",
       "rows": 401,
       "first": "2025-04-02",
       "last": "2026-11-25",
-      "last_close": 24.93,
-      "sha256": "ead767f4b0c6b863be6967af7f4135916ad7168b2e50dc4996b501fbfcbdda88"
+      "last_close": 24.8,
+      "sha256": "bbd597687225ece2335c7b8b388e557bd00e7f508f7d53c86b01ba84d892abf1"
     },
     "sz002815": {
       "file": "sz002815.csv",
       "rows": 401,
       "first": "2025-04-02",
       "last": "2026-11-25",
-      "last_close": 14.56,
-      "sha256": "388755bdd142d2310347394c52c495ca7796da0c3258546c686ca60dbb1f6631"
+      "last_close": 13.87,
+      "sha256": "3cd141eee15e6b96f250f55bfeb961c7dd64836876d39e80f587400e20ece1fd"
     },
     "sz000823": {
       "file": "sz000823.csv",
       "rows": 401,
       "first": "2025-04-02",
       "last": "2026-11-25",
-      "last_close": 19.22,
-      "sha256": "bfc72a422c4bd25e30f9f82b024355bcc8d3c3bc3f93a106a10efef9ebe419ef"
+      "last_close": 19.32,
+      "sha256": "1acb44917e88284459fe698b8d796aa4b9843575b436e2c7d125bd7bc8639030"
     },
     "sz000657": {
       "file": "sz000657.csv",
       "rows": 401,
       "first": "2025-04-02",
       "last": "2026-11-25",
-      "last_close": 33.55,
-      "sha256": "2a045b5a47539204d78390c14ee65cf5df8079d6082d4a45bd011cc78ce1d672"
+      "last_close": 32.2,
+      "sha256": "caaa6117d6235974ab15556eef4fda7fe61ecc7df24bd068bc24f3a1853e6720"
     },
     "sz002971": {
       "file": "sz002971.csv",
       "rows": 401,
       "first": "2025-04-02",
       "last": "2026-11-25",
-      "last_close": 29.81,
-      "sha256": "6f860587e6a4bd9d9d57d2652f572cad162d36824a05c4c99f09b242400a4fd2"
+      "last_close": 28.12,
+      "sha256": "58694ff0e28b516e3f594e837d50f1f56531aeca886a7a190e8b1412b8f454bb"
     }
   }
 }
